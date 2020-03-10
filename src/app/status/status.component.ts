@@ -8,19 +8,37 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './status.component.html',
   styleUrls: ['./status.component.scss']
 })
+
 export class StatusComponent implements OnInit {
   retrieved_data: Status[] = [
   
+
 ]; 
+
+project_id:string;
 
   constructor(private appservice: EmpireService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.appservice.getStatus().subscribe(response=>{
-      this.retrieved_data = response
-      // console.log("Response oooooooo ",response);
-      
+   
+  
+    this.route.paramMap.subscribe(params => {
+      this.project_id = params.get("project_id")
     })
+
+      this.load_project_status(this.project_id)
+
+  }
+
+  load_project_status(project_id){
+    this.appservice.getStatusByProjectId(project_id)
+    .subscribe(response=>{
+      this.retrieved_data = response
+      
+      // console.log("Response oooooooo ",response);
+      })
+
+    
   }
 
 }

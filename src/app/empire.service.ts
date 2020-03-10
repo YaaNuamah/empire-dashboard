@@ -8,7 +8,7 @@ import { Turntabl_Project, Endpoints, Status } from './endpoints';
 })
 export class EmpireService {
 
-  testUrl:string = 'http://localhost:8050/api/v1/status'
+  testUrl:string = 'http://localhost:8050/api/v1/status/'
   turntablproject_url:string = 'http://localhost:8050/api/v1/projects'
 
   constructor(private http: HttpClient) {
@@ -37,7 +37,10 @@ export class EmpireService {
   getStatus(): Observable<Status[]> {
   // return this.http.get<Status[]>(sessionStorage.getItem('status_url'));
   return this.http.get<Status[]>(this.testUrl);
+  }
 
+  getStatusByProjectId(project_id: number): Observable<Status[]> {
+    return this.http.get<Status[]>(this.testUrl + project_id);
   }
   
 }
