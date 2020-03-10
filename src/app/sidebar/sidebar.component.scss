@@ -1,0 +1,68 @@
+/* Sidebar */
+
+@import '../../styles';
+  .nav {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    .nav-item {
+      .collapse {
+        z-index: 999;
+      }
+      .collapse.show,
+      .collapsing {
+        background: $sidebar-light-menu-active-bg;
+      }
+      .nav-link {
+        align-items: center;
+        display: flex;
+        padding: $sidebar-menu-padding;
+        white-space: nowrap;
+        height: $nav-link-height;
+        color: $sidebar-light-menu-color;
+        &:hover {
+          color: darken($sidebar-light-menu-color, 5%);
+        }
+        &.active {
+          color: $sidebar-light-menu-active-color;
+          .menu-title,
+          i {
+            color: inherit;
+          }
+        }
+      }
+      &.nav-profile {
+        .nav-link {
+          @include display-flex;
+          @include flex-direction(column);
+          height: auto;
+          .user-wrapper {
+            @include display-flex;
+            margin-bottom: 30px;
+            .profile-image {
+              width: 40px;
+              height: 40px;
+              img {
+                @include border-radius(100%);
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:not(.sub-menu) {
+      >.nav-item {
+        &:hover {
+          &:not(.nav-profile) {
+            >.nav-link {
+              background: $sidebar-light-menu-hover-bg;
+              color: $sidebar-light-menu-hover-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+

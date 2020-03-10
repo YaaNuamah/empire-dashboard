@@ -1,0 +1,67 @@
+/* Dashboard */
+
+@import '../../styles';
+.card-statistics {
+  .highlight-icon {
+    height: 53px;
+    width: 53px;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include border-radius(50px);
+    i {
+      font-size: 27px;
+      line-height: 1;
+    }
+  }
+  i {
+    line-height: 1;
+  }
+}
+ .card-weather {
+  background: #e1ecff;
+   background-image: linear-gradient(to left bottom, #d6eef6, #dff0fa, #e7f3fc, #eff6fe, #f6f9ff);
+  .card-body {
+    background: $white;
+    &:first-child {
+      background:url("../../assets/images/samples/weather.svg") no-repeat center;
+      background-size: cover;
+    }
+  }
+}
+#dashboardTrendingProgress {
+  width: 60px;
+}
+.dashboard-bar-chart-legend {
+  .col {
+    text-align: center;
+    @include display-flex;
+    @include align-items(center);
+    @include flex-direction(column);
+    .bg {
+      margin-left: auto;
+      margin-right: auto;
+      height: 5px;
+      width: 30px;
+      display: block;
+      margin-top: 5px;
+    }
+    &:nth-child(1) {
+      .bg {
+        background: theme-color(info);
+      }
+    }
+    &:nth-child(2) {
+      .bg {
+        background: theme-color(primary);
+      }
+    }
+    &:nth-child(3) {
+      .bg {
+        background: theme-color(danger);
+      }
+    }
+  }
+ }
+
+

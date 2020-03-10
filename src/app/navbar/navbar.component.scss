@@ -1,0 +1,48 @@
+@import '../../styles';
+
+/* Navbar */
+.navbar {
+  font-family: $type-2;
+  background: $blue-teal-gradient;
+  transition: background $action-transition-duration $action-transition-timing-function;
+  -webkit-transition: background $action-transition-duration $action-transition-timing-function;
+  -moz-transition: background $action-transition-duration $action-transition-timing-function;
+  -ms-transition: background $action-transition-duration $action-transition-timing-function;
+    .navbar-brand {
+      color: $white;
+      font-size: 1.5rem;
+      line-height: 48px;
+      margin-right: 0;
+      padding: 0.25rem 0;
+      @include display-flex;
+      &:active,
+      &:focus,
+      &:hover {
+        color: lighten(color(gray-dark), 10%);
+      }
+    }
+  }
+  .navbar-menu-wrapper {
+    transition: width $action-transition-duration $action-transition-timing-function;
+    -webkit-transition: width $action-transition-duration $action-transition-timing-function;
+    -moz-transition: width $action-transition-duration $action-transition-timing-function;
+    -ms-transition: width $action-transition-duration $action-transition-timing-function;
+    color: $white;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: calc(100% - #{$sidebar-width-lg});
+    height: $navbar-height;
+    @media (max-width: 991px) {
+      width: auto;
+    }
+      .nav-link {
+          color: inherit;
+          font-size: $navbar-font-size;
+          vertical-align: middle;
+        }
+    }
+  
+  
+
+
+
