@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatusComponent } from './status/status.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { CreateformComponent } from './createform/createform.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule }    from '@angular/common/http';
         SidebarComponent,
         FooterComponent,
         DashboardComponent,
-        StatusComponent
+        StatusComponent,
+        CreateformComponent
     ],     
     imports: [
         BrowserModule,
